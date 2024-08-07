@@ -1,0 +1,10 @@
+venv
+DjangoWebsocket/chat/api_key.py
+DjangoWebsocket/db.sqlite3
+.idea
+
+__pycache__/
+*/__pycache__/
+*.py[cod]
+.pyc
+*.pyc

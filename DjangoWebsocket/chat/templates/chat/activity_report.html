@@ -1,0 +1,30 @@
+<!-- activity_report.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Activity Report</title>
+</head>
+<body>
+<h1>User Activity Report</h1>
+<table>
+    <thead>
+    <tr>
+        <th>User</th>
+        <th>Room</th>
+        <th>Message</th>
+        <th>Timestamp</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for activity in activities %}
+    <tr>
+        <td>{{ activity.user.username }}</td>
+        <td>{{ activity.room_name }}</td>
+        <td>{{ activity.message }}</td>
+        <td>{{ activity.timestamp }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

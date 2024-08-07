@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat Rooms</title>
+</head>
+<body>
+What chat room would you like to enter?<br/>
+<input id="room-name-input" type="text" size="100"/><br/>
+<label for="language-select">Select Language:</label>
+<select id="language-select">
+    <option value="uk">Ukrainian</option>
+    <option value="ru">Russian</option>
+    <option value="en">English</option>
+</select><br/>
+<input id="room-name-submit" type="button" value="Enter"/>
+
+<script>
+    document.querySelector('#room-name-input').focus();
+    document.querySelector('#room-name-input').onkeyup = function(e) {
+        if (e.keyCode === 13) {  // enter, return
+            document.querySelector('#room-name-submit').click();
+        }
+    };
+
+    document.querySelector('#room-name-submit').onclick = function(e) {
+    var roomName = encodeURIComponent(document.querySelector('#room-name-input').value.trim());
+    var language = encodeURIComponent(document.querySelector('#language-select').value);
+    var url = '/' + roomName + '/?language=' + language;
+
+    window.location.href = url;
+};
+
+</script>
+</body>
+</html>
